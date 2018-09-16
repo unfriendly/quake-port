@@ -15,18 +15,18 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "async": "~0.2.9",
-    "buffer-crc32": "~0.2.1",
-    "ejs": "~0.8.4",
-    "express": "~3.3.5",
-    "ffi": "^2.2.0",
-    "optimist": "~0.6.0",
+    "node-gyp": "0.13.1",
+    "unzip": "0.1.11",
     "quakejs-files": "0.0.3",
-    "send": "~0.2.0",
     "temp": "~0.5.1",
     "underscore": "~1.5.1",
-    "unzip": "^0.1.11",
+    "express": "~3.3.5",
+    "optimist": "~0.6.0",
+    "ejs": "~0.8.4",
+    "ws": "0.4.29",
     "winston": "~0.7.2",
     "wrench": "~1.5.4",
-    "ws": "~0.4.29"
+    "buffer-crc32": "~0.2.1",
+    "send": "~0.2.0"
   }
 }
