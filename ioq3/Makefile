@@ -913,11 +913,13 @@ ifeq ($(PLATFORM),js)
     --js-library $(LIBSYSBROWSER) \
     --js-library $(LIBVMJS) \
     -s INVOKE_RUN=0 \
-    -s EXPORTED_FUNCTIONS="['_main', '_malloc', '_free', '_atof', '_Com_Printf', '_Com_Error', '_Com_ProxyCallback', '_Com_GetCDN', '_Com_GetManifest', '_Z_Malloc', '_Z_Free', '_S_Malloc', '_Cvar_Set', '_Cvar_VariableString', '_VM_GetCurrent', '_VM_SetCurrent', '_VM_Syscall']" \
+    -s EXPORTED_FUNCTIONS="['_main', '_fopen', '_malloc', '_free', '_atof', '_Com_Printf', '_Com_Error', '_Com_ProxyCallback', '_Com_GetCDN', '_Com_GetManifest', '_Z_Malloc', '_Z_Free', '_S_Malloc', '_Cvar_Set', '_Cvar_VariableString', '_VM_GetCurrent', '_VM_SetCurrent', '_VM_Syscall']" \
     -s OUTLINING_LIMIT=20000 \
     -s LEGACY_GL_EMULATION=1 \
     -s RESERVED_FUNCTION_POINTERS=1 \
     -s TOTAL_MEMORY=234881024 \
+    -s FORCE_FILESYSTEM=1 \
+    -s SOCKET_WEBRTC=1 \
     -s EXPORT_NAME=\"ioq3\" \
     $(OPTIMIZE)
 
@@ -925,11 +927,13 @@ ifeq ($(PLATFORM),js)
     --js-library $(LIBSYSNODE) \
     --js-library $(LIBVMJS) \
     -s INVOKE_RUN=1 \
-    -s EXPORTED_FUNCTIONS="['_main', '_malloc', '_free', '_atof', '_Com_Printf', '_Com_Error', '_Com_ProxyCallback', '_Com_GetCDN', '_Com_GetManifest', '_Z_Malloc', '_Z_Free', '_S_Malloc', '_Cvar_Set', '_Cvar_VariableString', '_CON_SetIsTTY', '_VM_GetCurrent', '_VM_SetCurrent', '_VM_Syscall']" \
+    -s EXPORTED_FUNCTIONS="['_main', '_fopen', '_malloc', '_free', '_atof', '_Com_Printf', '_Com_Error', '_Com_ProxyCallback', '_Com_GetCDN', '_Com_GetManifest', '_Z_Malloc', '_Z_Free', '_S_Malloc', '_Cvar_Set', '_Cvar_VariableString', '_CON_SetIsTTY', '_VM_GetCurrent', '_VM_SetCurrent', '_VM_Syscall']" \
     -s OUTLINING_LIMIT=20000 \
     -s LEGACY_GL_EMULATION=1 \
     -s RESERVED_FUNCTION_POINTERS=1 \
     -s TOTAL_MEMORY=234881024 \
+    -s FORCE_FILESYSTEM=1 \
+    -s SOCKET_WEBRTC=1 \
     -s EXPORT_NAME=\"ioq3ded\" \
     $(OPTIMIZE)
 
