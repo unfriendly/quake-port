@@ -1,15 +1,15 @@
-# QuakeJS
+# Phasor Quake
 
-QuakeJS is a port of [ioquake3](http://www.ioquake3.org) to JavaScript with the help of [Emscripten](http://github.com/kripken/emscripten).
+Phasor Quake is a port of [ioquake3](http://www.ioquake3.org) to JavaScript with the help of Phasor.
 
 
 ## Building binaries
 
-As a prerequisite, you'll need to have a working build of [Emscripten](http://github.com/kripken/emscripten), then:
+As a prerequisite, you'll need to have a working build of Phasor, then:
 
 ```shell
 cd quakejs/ioq3
-make PLATFORM=js EMSCRIPTEN=<path_to_emscripten>
+make PLATFORM=js PHASOR=<path_to_phasor>
 ```
 
 Binaries will be placed in `ioq3/build/release-js-js/`.
@@ -42,9 +42,9 @@ Your server is now running on: [http://0.0.0.0:8080](http://0.0.0.0:8080)
 
 ## Running a dedicated server
 
-If you'd like to run a dedicated server, the only snag is that unlike regular Quake 3, you'll need to double check the content server to make sure it supports the mod / maps you want your server to run (which you can deduce from the [public manifest](http://content.quakejs.com/assets/manifest.json)).
+If you'd like to run a dedicated server, the only snag is that unlike regular Quake 3, you'll need to double check the content server to make sure it supports the mod / maps you want your server to run (which you can deduce from the [public manifest](http://content.fatality.io/assets/manifest.json)).
 
-Also, networking in QuakeJS is done through WebSockets, which unfortunately means that native builds and web builds currently can't interact with eachother.
+Also, networking in Phasor Quake is done through WebSockets, which unfortunately means that native builds and web builds currently can't interact with eachother.
 
 Otherwise, running a dedicated server is similar to running a dedicated native server command-line wise.
 
@@ -105,7 +105,7 @@ and you should be able to join at http://fatality.io/play?connect%20SERVER_IP:27
 
 ## Running a content server
 
-QuakeJS loads assets directly from a central content server. A public content server is available at `content.quakejs.com`, however, if you'd like you run your own (to perhaps provide new mods) you'll need to first repackage assets into the format QuakeJS expects.
+Phasor Quake loads assets directly from a central content server. A public content server is available at `content.fatality.io`, however, if you'd like you run your own (to perhaps provide new mods) you'll need to first repackage assets into the format Phasor Quake expects.
 
 ### Repackaging assets
 
