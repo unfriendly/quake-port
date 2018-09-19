@@ -4,11 +4,10 @@ var fs = require('fs');
 var logger = require('winston');
 var path = require('path');
 var exec = require('child_process').exec;
-var execSync = require('child_process').execSync;
+var execSync = require('execSync').exec;
 var os = require('os');
 var temp = require('temp');
 var wrench = require('wrench');
-var unzip = require('unzip');
 
 var baseGame = 'baseq3';
 var commonReferenceThreshold = 3;
@@ -138,7 +137,6 @@ function getGames(root) {
 
 function getPaks(root) {
 	return fs.readdirSync(root).filter(function (file) {
-		// logger.info(file);
 		return path.extname(file).toLowerCase() === '.pk3';
 	});
 }
@@ -146,8 +144,7 @@ function getPaks(root) {
 function extractPak(pak, dest) {
 	logger.info('extracting pak ' + pak);
 
-	//execSync('unzip -o ' + pak + ' -d ' + dest);
-        fs.createReadStream(pak).pipe(unzip.Extract({ path: dest });
+	execSync('unzip -o ' + pak + ' -d ' + dest);
 }
 
 function flattenPaks(paks) {
@@ -259,8 +256,6 @@ function writePak(pak, fileMap, splitThreshold, callback) {
 		splitThreshold = undefined;
 	}
 
-	var cb = callback
-
 	var part = 100;
 	var currentPak = nextPartName(pak);
 	var files = Object.keys(fileMap).sort();
@@ -282,7 +277,6 @@ function writePak(pak, fileMap, splitThreshold, callback) {
 		var relative = files.shift();
 		var absolute = fileMap[relative];
 		var baseDir = path.normalize(absolute.replace(relative, ''));
-		// logger.info(currentPak)
 
 		exec('zip \"' + currentPak + '\" \"' + relative + '\"', { cwd: baseDir }, function (err) {
 			if (err) return cb(err);
@@ -324,7 +318,6 @@ function writePak(pak, fileMap, splitThreshold, callback) {
 // clean out old assets
 //
 getGames(dest).map(function (file) {
-	// logger.info(file);
 	return path.join(dest, file);
 }).forEach(function (dir) {
 	logger.info('deleting ' + dir);
@@ -335,8 +328,6 @@ getGames(dest).map(function (file) {
 // initialize the graph
 //
 var graph = new AssetGraph(baseGame, commonReferenceThreshold);
-logger.info("asdasdasdsadsadas")
-// logger.info(graph)
 
 getGames(src).forEach(function (game) {
 	var dir = path.join(src, game);
