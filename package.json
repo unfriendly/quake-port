@@ -24,7 +24,7 @@
     "quakejs-files": "0.0.3",
     "send": "^0.16.2",
     "temp": "~0.5.1",
-    "underscore": "~1.5.1",
+    "underscore": "~1.12.1",
     "unzip": "0.1.11",
     "winston": "~0.7.2",
     "wrench": "~1.5.4",
