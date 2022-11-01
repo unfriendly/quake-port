@@ -19,7 +19,7 @@
     "ejs": "~0.8.4",
     "execSync": "^1.0.2",
     "express": "~3.3.5",
-    "node-gyp": "0.13.1",
+    "node-gyp": "9.3.0",
     "optimist": "~0.6.0",
     "quakejs-files": "0.0.3",
     "send": "^0.16.2",
